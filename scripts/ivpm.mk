@@ -35,9 +35,16 @@ RULES := 1
 
 ifeq (true,$(PHASE2))
 build : $(BUILD_DEPS)
+
+clean :
+	$(Q)rm -rf $(LIB_DIR)
+
 else
 build : $($(PROJECT)_deps)
 	$(Q)$(MAKE) -f $(SCRIPTS_DIR)/ivpm.mk PHASE2=true VERBOSE=$(VERBOSE) build
+
+clean : $($(PROJECT)_clean_deps)
+	$(Q)$(MAKE) -f $(SCRIPTS_DIR)/ivpm.mk PHASE2=true VERBOSE=$(VERBOSE) clean
 endif
 
 # TODO: Change Makefile targets
