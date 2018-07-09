@@ -1,0 +1,3 @@
+
+chiselscripts@https://github.com/mballance/chiselscripts/releases/download/0.0.2/chiselscripts-0.0.2.tar.gz
+
